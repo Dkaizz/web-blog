@@ -1,0 +1,56 @@
+<form (ngSubmit)="handleFormSubmit($event)" [formGroup]="formGroup">
+  <div class="container">
+    <div class="row">
+      <div class="col-7">
+        <div class="shadow-lg p-4">
+          <mat-form-field class="w-100">
+            <mat-label>Tiêu đề bài đăng</mat-label>
+            <input matInput formControlName="title" placeholder="Tiêu đề bài đăng..." (input)="handleTitleChange($event)">
+          </mat-form-field>
+          <mat-form-field class="w-100">
+            <mat-label>Permalink</mat-label>
+            <input matInput placeholder="Permalink" disabled="true" #inputPermalink>
+          </mat-form-field>
+          <mat-form-field class="w-100">
+            <mat-label>Trích đoạn</mat-label>
+            <textarea rows="10" formControlName="excerpt" matInput placeholder="Trích đoạn"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="shadow-lg p-4">
+          <mat-form-field class="w-100">
+            <mat-label>Thể loại</mat-label>
+            <mat-select formControlName="category" ngDefaultControl>
+              <mat-option *ngFor="let item of categories" [value]="item.id">
+                {{item.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div>
+            <label class="d-block mb-2" for="post_file_image">Ảnh bài đăng</label>
+            <img class="w-100 image-upload mb-3" [src]="imgUrl" >
+            <input accept="image/*" class="form-control" id="post_file_image" type="file" (change)="onFileSelected($event)">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="shadow-lg p-4 mt-5">
+      <angular-editor id="editor2" formControlName="content" [config]="editorConfig" placeholder="Nội dung..."></angular-editor>
+
+<!--      <mat-form-field class="w-100">-->
+<!--        <mat-label>Nội dung</mat-label>-->
+<!--        <textarea matInput rows="10" formControlName="content" placeholder="Nội dung..."></textarea>-->
+<!--      </mat-form-field>-->
+    </div>
+    <div class="p-5 text-center">
+      <button mat-raised-button color="primary" (click)="handleAddBlog()">
+        {{isEdit?'Cập nhật':'Đăng'}}
+      </button>
+      <button class="ms-3" mat-raised-button routerLink="/dashboard/posts">
+        Trở về
+      </button>
+    </div>
+  </div>
+
+</form>

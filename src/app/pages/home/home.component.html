@@ -1,0 +1,22 @@
+<section class="featured-wrapper">
+  <div class="text-white text-center">
+    <h1>Bài nổi bật</h1>
+    <p>Hãy quẩy lên nào các bạn trẻ. Đời còn khỏe thì tội gì mà không trẩu tre lên</p>
+  </div>
+  <div class="row">
+    <div class="col-lg-4" *ngFor="let item of listData">
+      <app-post-card [data]="item"></app-post-card>
+    </div>
+  </div>
+</section>
+<section class="container mt-5">
+  <div class="text-center">
+    <h1>Bài viết mới nhất</h1>
+    <p>Hãy quẩy lên nào các bạn trẻ. Đời còn khỏe thì tội gì mà không trẩu tre lên</p>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 mt-3" *ngFor="let item of listData">
+      <app-post-card [data]="item"></app-post-card>
+    </div>
+  </div>
+</section>

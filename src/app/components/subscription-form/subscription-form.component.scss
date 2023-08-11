@@ -1,0 +1,21 @@
+.subscription-from-wrapper{
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 12px 6px var(--secondary-color);
+  .form-input{
+    padding: 12px;
+    border-radius: 4px;
+    & + .form-input{
+      margin-left: 16px;
+    }
+  }
+  .btn-subscription{
+    margin-left: 8px;
+    padding: 11px;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+  }
+}

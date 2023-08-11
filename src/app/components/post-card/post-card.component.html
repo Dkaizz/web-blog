@@ -1,0 +1,19 @@
+<mat-card class="example-card" *ngIf="!!data" >
+  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-actions >
+    <button >Inspiring</button>
+    <button >Featured</button>
+    <span>Views-{{data.view}}</span>
+  </mat-card-actions>
+  <a class="mat-card-content px-3 text-uppercase mb-2" [routerLink]="'/post/'+data.id">
+    {{data.title}}
+  </a>
+  <mat-card-content>
+    <p>
+      {{data.excerpt}}
+    </p>
+  </mat-card-content>
+  <mat-card-footer class="p-3 text-uppercase">
+    <p>Last update-{{dateCreatePost}}</p>
+  </mat-card-footer>
+</mat-card>

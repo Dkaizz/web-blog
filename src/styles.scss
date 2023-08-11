@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~normalize.css';
+
+
+:root {
+  --primary-color: #026467;
+
+  --secondary-color: #E5F5EA;
+
+  --body-text-color: #596392;
+
+  --navbar-footer-color: #F9F9F9
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: var(--body-text-color);
+}
+
+
+a{
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button{
+  background-color: transparent;
+}
+textarea,
+button,
+input{
+  border: none;
+  outline: none;
+}
+
+.site-logo{
+  display: inline-block;
+  padding: 5px 20px;
+  border-radius: 20px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+img{
+  width: 100%;
+}

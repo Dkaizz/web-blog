@@ -1,0 +1,84 @@
+<div class="p-5 bg-secondary-subtle shadow-lg mt-5">
+  <mat-form-field class="w-100">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+  </mat-form-field>
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID</th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tiêu đề</th>
+        <td mat-cell *matCellDef="let row"> {{row.title}}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Thể loại</th>
+        <td mat-cell *matCellDef="let row"> {{row.category}} </td>
+      </ng-container>
+<!--      <ng-container matColumnDef="content">-->
+<!--        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nội dung</th>-->
+<!--        <td mat-cell *matCellDef="let row" [innerHTML]="row.content" >  </td>-->
+<!--      </ng-container>-->
+      <ng-container matColumnDef="excerpt">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Đoạn trích</th>
+        <td mat-cell *matCellDef="let row"> {{row.excerpt}} </td>
+      </ng-container>
+      <ng-container matColumnDef="img">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ảnh</th>
+        <td mat-cell *matCellDef="let row">
+          <img [src]="row.img" class="w-100">
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="permalink">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> permalink</th>
+        <td mat-cell *matCellDef="let row"> {{row.permalink}} </td>
+      </ng-container>
+      <ng-container matColumnDef="view">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Lượt xem</th>
+        <td mat-cell *matCellDef="let row"> {{row.view}} </td>
+      </ng-container>
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Trạng thái</th>
+        <td mat-cell *matCellDef="let row"> {{row.status}} </td>
+      </ng-container>
+      <ng-container matColumnDef="createdAt">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> CreatedAt</th>
+        <td mat-cell *matCellDef="let row"> {{row.createdAt}} </td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> CreatedAt</th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-icon-button color="primary" [routerLink]="'./edit/'+row.id">
+            <mat-icon>
+              border_color
+            </mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="delete(row)">
+            <mat-icon>
+              do_not_disturb_on
+            </mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </div>
+
+
+</div>

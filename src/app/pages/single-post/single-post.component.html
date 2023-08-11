@@ -1,0 +1,28 @@
+<div class="container" *ngIf="data">
+
+  <img class="img-bg mt-5" [src]="data.img" alt="lỗi">
+  <div class="row mt-4 text-black">
+    <div class="col-md-9 info">
+      <div class="p-5 info-des mb-5">
+        <div class="d-flex align-items-center info-action">
+          <button>Inspiring</button>
+          <button>Featured</button>
+          <span>Views-{{data.view}}</span>
+        </div>
+        <h1 class="text-uppercase my-3 py-3 ">
+          {{data.title}}
+        </h1>
+        <p class=" des" [innerHTML]="data.content">
+          </p>
+      </div>
+      <app-comment-form></app-comment-form>
+      <app-comment-list></app-comment-list>
+
+    </div>
+    <div class="col-md-3 ">
+      <div class="mb-3" *ngFor="let item of listdata">
+        <app-post-card [data]="item"/>
+      </div>
+    </div>
+  </div>
+</div>

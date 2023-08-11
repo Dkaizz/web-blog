@@ -1,0 +1,9 @@
+<footer class="text-center py-2 mt-5 footer">
+  <div class="site-logo">
+    ANG-BLOG
+  </div>
+  <ul class="d-flex align-items-center justify-content-center my-3">
+    <li *ngFor="let item of listNav"><a class="me-4" [routerLink]="item.href">{{item.title}}</a></li>
+  </ul>
+  <p>Copyright @ 2023 Angular Blogsite</p>
+</footer>

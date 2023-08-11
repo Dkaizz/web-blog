@@ -1,0 +1,5 @@
+<nav class="nav-wrapper d-flex align-items-center justify-content-center py-3 fixed-top">
+  <ul class="d-flex align-items-center justify-content-center">
+    <li *ngFor="let item of listNav"><a class="nav-item " [routerLink]="'/category/'+item.id">{{item.name}}</a></li>
+  </ul>
+</nav>

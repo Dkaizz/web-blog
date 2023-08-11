@@ -1,0 +1,27 @@
+<div class="container ">
+  <div class="bg-secondary-subtle m-auto shadow-lg p-5 w-50 text-center">
+    <div>
+      <h1>Đăng ký</h1>
+      <p>Đăng ký tài khoản của bạn tại đây.</p>
+    </div>
+    <form [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <mat-label>Tài khoản</mat-label>
+        <input matInput placeholder="user1" formControlName="userName" required>
+        <mat-error *ngIf="formGroup.get('userName')?.invalid">{{getUserNameErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field class="w-100">
+        <mat-label>Mật khẩu</mat-label>
+        <input matInput placeholder="***" formControlName="passWord" required type="passWord">
+        <mat-error *ngIf="formGroup.get('passWord')?.invalid">{{getPassWordErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field class="w-100">
+        <mat-label>Nhập lại mật khẩu</mat-label>
+        <input matInput placeholder="***" formControlName="prePassWord" required type="passWord">
+        <mat-error *ngIf="formGroup.get('prePassWord')?.invalid">{{getPrePassWordErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="p-4 mt-3 w-100" (click)="handlerRegister()">Đăng ký</button>
+    </form>
+    <p>Bạn đã có tài khoản?<button mat-button color="primary" routerLink="/login">Dăng nhập</button></p>
+  </div>
+</div>

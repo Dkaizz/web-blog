@@ -1,0 +1,10 @@
+.nav-wrapper{
+  top: 78px;
+  background-color: var(--navbar-footer-color);
+
+  .nav-item{
+    text-transform: uppercase;
+    margin-left: 32px;
+    color: var(--primary-color);
+  }
+}

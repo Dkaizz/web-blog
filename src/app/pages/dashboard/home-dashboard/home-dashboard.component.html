@@ -1,0 +1,9 @@
+<div class=" d-inline-block w-100">
+  <ul class="row">
+    <li class="col-3" *ngFor="let item of litsItem">
+      <a class="" [routerLink]="'/dashboard/'+item.href" >
+      <app-item-list-dashboard [item]="item"/>
+      </a>
+    </li>
+  </ul>
+</div>

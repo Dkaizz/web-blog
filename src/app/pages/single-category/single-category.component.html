@@ -1,0 +1,14 @@
+<div class="p-5 category">
+  <div class="container text-white">
+    <h1 *ngIf="category">{{category.name}}</h1>
+    <p>Lọc tất cả các blog theo cùng thể loại.</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 mt-3" *ngFor="let item of listdata">
+      <app-post-card [data]="item"></app-post-card>
+    </div>
+  </div>
+
+</div>

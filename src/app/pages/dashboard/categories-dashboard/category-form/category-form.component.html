@@ -1,0 +1,15 @@
+<div class="row p-5 bg-secondary-subtle shadow-lg">
+  <div class="col-12">
+    <h1 class="text-center">Thêm thể loại mới</h1>
+    <p class="text-center">Bạn có thêm thể loại mới tại đây...!</p>
+    <form class="row" [formGroup]="formGroup">
+      <div class="col-10">
+        <input class="form-control h-100 shadow-sm" formControlName="name" placeholder="Tên thể loại">
+      </div>
+      <div class="col-2">
+        <button type="button" class="p-4" mat-raised-button color="primary" (click)="addCategory()" [disabled]="isPost">Thêm mới</button>
+      </div>
+    </form>
+  </div>
+
+</div>
